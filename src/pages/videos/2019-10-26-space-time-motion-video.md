@@ -1,11 +1,12 @@
 ---
-templateKey: 'video-page'
+templateKey: video-page
+title: Space Time Motion (Official Video)
 date: 2019-10-26T10:00:00.000Z
-title: 'Space Time Motion (Official Video)'
+description: Our new video
 youTubeVideoId: 2ByS6WTguDo
 siteName: Stereogum
-siteURL: https://www.stereogum.com/2059360/jennifer-vanilla-space-time-motion-video/video/
-description: 'Our Release Show'
+siteURL: >-
+  https://www.stereogum.com/2059360/jennifer-vanilla-space-time-motion-video/video/
 ---
 
 Official Music Video for Jennifer Vanilla's "Space Time Motion" 
