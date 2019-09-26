@@ -20,7 +20,7 @@ export const EventTemplate = ({
     <section className="section">
       {helmet || ''}
       <div className="container content">
-        <h2>Jennifer Vanilla @{venue} ({location}), {date} {icon}</h2>
+        <h2>{`Jennifer Vanilla @${venue} (${location}), ${date} ${icon}`}</h2>
         <PostContent content={content} />
        </div>
     </section>
@@ -52,7 +52,7 @@ const Event = ({ data }) => {
         icon={post.frontmatter.icon}
         helmet={
           <Helmet titleTemplate="%s | Event">
-            <title>{`${ post.frontmatter.venue}, ${ post.frontmatter.location} on ${post.frontmatter.date}`}</title>
+            <title>{`Jennifer Vanilla @${ post.frontmatter.venue}, ${ post.frontmatter.location} on ${post.frontmatter.date}`}</title>
             <meta
               name="description"
               content={`${post.frontmatter.description}`}

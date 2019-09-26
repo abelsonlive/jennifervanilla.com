@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import Player from 'react-soundcloud-widget-player'
+import { Player } from '../utils'
 
 export const AudioPageTemplate = ({
   content,
@@ -22,7 +22,7 @@ export const AudioPageTemplate = ({
       {helmet || ''}
       <div className="container content">
         <h2> {title} </h2>
-        <Player title={title} audioUrl={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${soundcloudID}`}/>
+        <Player soundcloudID={soundcloudID}/>
         <PostContent content={content} />
        </div>
     </div>

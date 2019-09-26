@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import Player from 'react-soundcloud-widget-player'
-
+import { Player } from '../utils'
 // import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class MusicIndex extends React.Component {
@@ -16,10 +15,7 @@ class MusicIndex extends React.Component {
           tracks.map(({node: track}) => (
             <div>
               <center> <h3> {track.frontmatter.title} </h3> </center>
-              <Player
-                title={track.frontmatter.title}
-                audioUrl={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${track.frontmatter.soundcloudID}`}
-            />
+              <Player souncloudID={track.frontmatter.soundcloudID}/>
               <Link to={track.fields.slug}>📇 ...</Link>
               <br/>
             </div>

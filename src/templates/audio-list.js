@@ -2,10 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Player from 'react-soundcloud-widget-player'
+import { Player } from '../utils'
 
 export const AudioListTemplate = ({ title, sounds }) => {
-
   return (
     <div className="section">
       <h1>
@@ -14,11 +13,8 @@ export const AudioListTemplate = ({ title, sounds }) => {
       <ul>
       {sounds &&
         sounds.map( (sound) => (
-          <li>
-            <Player
-                title={sound.title}
-                audioUrl={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${sound.soundcloudID}`}
-            />
+          <li key={sound.soundcloudID}>
+            <Player soundcloudID={sound.soundcloudID}/>
           </li>
         )
       )}
@@ -37,7 +33,6 @@ const AudioList = ({ data }) => {
   console.log(data);
   return (
     <Layout>
-        <script type="text/javascript" src="https://w.soundcloud.com/player/api.js"></script> 
       <AudioListTemplate title={post.frontmatter.title} sounds={post.frontmatter.sounds}/>
     </Layout>
   )
