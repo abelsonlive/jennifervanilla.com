@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import YouTube from 'react-youtube';
 
-export const VideoTemplate = ({
+export const VideoPageTemplate = ({
   content,
   contentComponent,
   title,
@@ -33,7 +33,7 @@ export const VideoTemplate = ({
   )
 }
 
-VideoTemplate.propTypes = {
+VideoPageTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   date: PropTypes.string,
@@ -45,12 +45,12 @@ VideoTemplate.propTypes = {
   helmet: PropTypes.object
 }
 
-const Video = ({ data }) => {
+const VideoPage = ({ data }) => {
   const { markdownRemark: video } = data;
 
   return (
     <Layout>
-      <VideoTemplate
+      <VideoPageTemplate
         content={video.html}
         contentComponent={HTMLContent}
         title={video.frontmatter.title}
@@ -71,15 +71,15 @@ const Video = ({ data }) => {
   )
 }
 
-Video.propTypes = {
+VideoPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default Video;
+export default VideoPage;
 
-export const videoQuery = graphql`
+export const videoPageQuery = graphql`
   query VideoByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id

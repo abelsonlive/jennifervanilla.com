@@ -44,7 +44,7 @@ export default () => (
       query VideoIndexQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "video" } } }
+          filter: { frontmatter: { templateKey: { eq: "video-page" } } }
         ) {
           edges {
             node {

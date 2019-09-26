@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { VideoTemplate } from '../../templates/Video'
+import { VideoPageTemplate } from '../../templates/video-page'
 
 const VideoPreview = ({ entry, widgetFor }) => (
-  <VideoTemplate
+  <VideoPageTemplate
     content={widgetFor('body')}
     title={entry.getIn(['data', 'title'])}
     description={entry.getIn(['data', 'description'])}

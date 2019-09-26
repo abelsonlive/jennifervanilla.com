@@ -17,6 +17,7 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Heading, name: heading, widget: string}
           - {label: Subheading, name: subheading, widget: string}
+
       - file: "src/pages/who-is-she/index.md"
         label: "Who Is She?"
         name: "who-is-she"
@@ -24,6 +25,36 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "default"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+
+      - file: "src/pages/gallery/index.md"
+        label: "Gallery"
+        name: "gallery"
+        fields: 
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "image-gallery"}
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            fields: 
+            - {label: "Image", name: "image", widget: "image"}
+            - {label: "Photgrapher", name: "creditName", widget: "string"}
+            - {label: "Photographer URL", name: "creditURL", widget: "string"}
+            - {label: "Caption", name: "caption", widget: "markdown", required: false}
+    
+      - file: "src/pages/web-ring/index.md"
+        label: "Jennifer Pages"
+        name: "web-ring"
+        fields: 
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "link-list"}
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "Links"
+            name: "links"
+            widget: "list"
+            fields: 
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "Source", name: "source", widget: "string" }
+
       - file: "src/pages/public-eye/index.md"
         label: "Public Eye"
         name: "public-eye"
@@ -44,6 +75,7 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "video-page"}
       - { label: "Title", name: "title", widget: "string"}
       - { label: "Date", name: "date", widget: "datetime"}
       - { label: Description, name: description, widget: string, required: false}

@@ -1,5 +1,5 @@
 ---
-templateKey: 'video'
+templateKey: 'video-page'
 date: 2019-10-26T10:00:00.000Z
 title: 'Space Time Motion (Official Video)'
 youTubeVideoId: 2ByS6WTguDo

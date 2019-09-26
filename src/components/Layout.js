@@ -78,9 +78,13 @@ const TemplateWrapper = ({ children }) => {
                   <br/>
                   <a href="/videos" className="nav-link">Videos</a>
                   <br/>
+                  <a href="/gallery" className="nav-link">Gallery</a>
+                  <br/>
                   <a href="/events" className="nav-link">Events</a>
                   <br/>
                   <a href="/public-eye" className="nav-link">"Public Eye"</a>
+                  <br/>
+                  <a href="/web-ring" className="nav-link">Jennifer Pages</a>
                   <br/>
                   <a href="/contact" className="nav-link">Contact</a>
                   <br/>
