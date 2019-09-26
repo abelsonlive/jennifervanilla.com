@@ -6,9 +6,18 @@ const EventPreview = ({ entry, widgetFor }) => (
   <EventTemplate
     content={widgetFor('body')}
     description={entry.getIn(['data', 'description'])}
+    date={entry.getIn(['data', 'date'])}
+    venue={entry.getIn(['data', 'venue'])}
+    location={entry.getIn(['data', 'location'])}
+    icon={entry.getIn(['data', 'icon'])}
     title={entry.getIn(['data', 'title'])}
   />
 )
+
+date,
+venue,
+location,
+icon,
 
 EventPreview.propTypes = {
   entry: PropTypes.shape({
