@@ -1,10 +1,10 @@
 # Gatsby + Netlify CMS Starter
 
 ## TODO:
--[ ] Fix Image Previews
+-[x] Fix Image Previews
 -[ ] Admin Login Link / Footer
 -[ ] CMS-ify Layout (and sidebar links)
-- [x] Add Social Media Links (CMS-ify?)
+-[x] Add Social Media Links (CMS-ify?)
 -[ ] CMS-Ify page metadata (facebook debugger)
 -[ ] Figure out image preview bug 
 -[ ] Figure out homepage (blurred edge image?)
