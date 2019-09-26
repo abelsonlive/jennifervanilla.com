@@ -1,15 +1,15 @@
 import React from 'react'
 
 import Layout from '../../components/Layout'
-import ShowIndex from '../../components/ShowIndex'
+import VideoIndex from '../../components/VideoIndex'
 
-export default class ShowIndexPage extends React.Component {
+export default class VideoIndexPage extends React.Component {
   render() {
     return (
       <Layout>
         <div className="container">
           <div className="content">
-            <ShowIndex />
+            <VideoIndex />
           </div>
         </div>
       </Layout>

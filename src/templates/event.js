@@ -5,12 +5,14 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-export const ShowTemplate = ({
+export const EventTemplate = ({
   content,
   contentComponent,
-  description,
-  title,
-  helmet,
+  date,
+  venue,
+  location,
+  icon,
+  helmet
 }) => {
   const PostContent = contentComponent || Content
 
@@ -18,63 +20,70 @@ export const ShowTemplate = ({
     <section className="section">
       {helmet || ''}
       <div className="container content">
-        <h1>{title}</h1>
-        <p>{description}</p>
+        <h2>Jennifer Vanilla @{venue} ({location}), {date} {icon}</h2>
         <PostContent content={content} />
        </div>
     </section>
   )
 }
 
-ShowTemplate.propTypes = {
+EventTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
+  icon: PropTypes.string,
+  date: PropTypes.string,
+  location: PropTypes.string,
+  venue: PropTypes.string,
   helmet: PropTypes.object,
 }
 
-const Show = ({ data }) => {
+const Event = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
     <Layout>
-      <ShowTemplate
+      <EventTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
+        date={post.frontmatter.date}
+        location={post.frontmatter.location}
+        venue={post.frontmatter.venue}
+        icon={post.frontmatter.icon}
         helmet={
-          <Helmet titleTemplate="%s | Show">
-            <title>{`${post.frontmatter.title}`}</title>
+          <Helmet titleTemplate="%s | Event">
+            <title>{`${ post.frontmatter.venue}, ${ post.frontmatter.location} on ${post.frontmatter.date}`}</title>
             <meta
               name="description"
               content={`${post.frontmatter.description}`}
             />
           </Helmet>
         }
-        title={post.frontmatter.title}
       />
     </Layout>
   )
 }
 
-Show.propTypes = {
+Event.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default Show
+export default Event
 
-export const showQuery = graphql`
-  query ShowByID($id: String!) {
+export const eventQuery = graphql`
+  query EventByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
+        link
+        date(formatString: "MMM D")
         description
+        venue
+        location
+        icon
       }
     }
   }

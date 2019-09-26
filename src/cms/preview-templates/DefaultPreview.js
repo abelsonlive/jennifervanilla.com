@@ -1,19 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { WhoIsSheTemplate } from '../../templates/who-is-she'
+import { DefaultTemplate } from '../../templates/default'
 
-const WhoIsShePreview = ({ entry, widgetFor }) => (
-  <WhoIsSheTemplate
+const DefaultPreview = ({ entry, widgetFor }) => (
+  <DefaultTemplate
     title={entry.getIn(['data', 'title'])}
     content={widgetFor('body')}
   />
 )
 
-WhoIsShePreview.propTypes = {
+DefaultPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   widgetFor: PropTypes.func,
 }
 
-export default WhoIsShePreview
+export default DefaultPreview

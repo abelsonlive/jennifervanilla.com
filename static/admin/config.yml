@@ -6,18 +6,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "shows"
-    label: "Shows"
-    folder: "src/pages/shows"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "show"}
-      - {label: "Name", name: "name", widget: "string"}
-      - {label: "Link", name: "link", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
   - name: "pages"
     label: "Pages"
     files:
@@ -33,6 +21,47 @@ collections:
         label: "Who Is She?"
         name: "who-is-she"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "who-is-she"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "default"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/public-eye/index.md"
+        label: "Public Eye"
+        name: "public-eye"
+        fields: 
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "link-list"}
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "Links"
+            name: "links"
+            widget: "list"
+            fields: 
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "Source", name: "source", widget: "string" }
+
+  - name: "videos"
+    label: "Video"
+    folder: "src/pages/videos"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - { label: Youtube, name: video,  widget: youtube, extraInfo: true, APIkey: AIzaSyAkehfEmpJcJfvuGT6-OYu7swFPcBkncG4}
+      - { label: "Site Name", name: siteName, widget: string, required: false}
+      - { label: "Site URL", name: siteURL, widget: string, required: false}
+      - { label: Description, name: description, widget: string, required: false}
+      - { label: "Body", name: "body", widget: "markdown"}
+
+  - name: "events"
+    label: "Event"
+    folder: "src/pages/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Venue", name: "venue", widget: "string"}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Link", name: "link", widget: "string"}
+      - {label: "Icon", name: "icon", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}

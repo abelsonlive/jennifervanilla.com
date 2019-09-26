@@ -1,0 +1,85 @@
+body { 
+  background-image: url('../img/bg.jpg');
+  color: #FFFFFF;
+	margin-top: 25px;
+	margin-right:25px;
+	margin-bottom:15px;
+	margin-left:25px;
+}
+.nav-link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+.nav-link:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FF6699;
+	text-decoration: underline;
+	font-weight: bold;
+}
+.BodyText {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #CCCCCC;
+}
+.BodyTextother {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #CCCCCC;
+}
+.smallText {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #CCCCCC;
+}
+.Header {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.BodyLinks {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #CCCCCC;
+	text-decoration: underline;
+}
+.BodyLinks:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #ffffff;
+	text-decoration: underline;
+}
+.ClientName {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+	color: #FFFFFF;
+	font-style: italic;
+}
+
+.copyright a:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #A90015;
+	text-decoration: underline;
+	font-weight: normal;
+}
+.style4 {color: #5F5843;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+}
+.thankyouTxt {
+	font-family: tekton, comic sans, times roman, Times, serif;
+	font-size: 16pt;
+	color: #FFFFFF;
+	font-weight: normal;
+	text-align: center;
+}
+
+.content {
+  color: #000000;
+  margin: 1em;
+}
