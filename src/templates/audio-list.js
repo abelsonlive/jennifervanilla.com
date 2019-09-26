@@ -37,6 +37,7 @@ const AudioList = ({ data }) => {
   console.log(data);
   return (
     <Layout>
+        <script type="text/javascript" src="https://w.soundcloud.com/player/api.js"></script> 
       <AudioListTemplate title={post.frontmatter.title} sounds={post.frontmatter.sounds}/>
     </Layout>
   )
