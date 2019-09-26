@@ -71,7 +71,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "image-gallery"}
           - {label: "Title", name: "title", widget: "string"}
           - label: "Shirts"
-            name: "shirts"
+            name: "images"
             widget: "list"
             fields: 
             - {label: "Image", name: "image", widget: "image"}

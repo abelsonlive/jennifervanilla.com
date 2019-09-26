@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import YouTube from "react-youtube";
 
-// import PreviewCompatibleImage from './PreviewCompatibleImage'
-
 class VideoIndex extends React.Component {
   render() {
     const { data } = this.props;

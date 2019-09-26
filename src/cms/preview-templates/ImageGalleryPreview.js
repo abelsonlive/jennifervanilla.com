@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { ImageGalleryTemplate } from "../../templates/image-gallery";
 
 const ImageGalleryPreview = ({ entry, getAsset }) => {
-  const data = entry.getIn(["data"]);
+  const data = entry.get('data').toJS();
   if (data) {
     return <ImageGalleryTemplate title={data.title} images={data.images} />;
   } else {

@@ -14,15 +14,15 @@ export const ImageGalleryTemplate = ({ title, images }) => {
             return (
               <li>
                 {img.link ? (
-                  <a href={img.link} target="_blank">
+                  <a href={img.link} target="_blank" rel="noopener noreferrer">
                     <PreviewCompatibleImage imageInfo={img} />
                   </a>
                 ) : (
                   <PreviewCompatibleImage imageInfo={img} />
                 )}
                 <br />
-                {img.caption && <small>{img.caption} </small>}
-                {/* { img.creditName && <small><Link to={img.creditURL}>{img.creditName}</Link></small>} */}
+                {img.alt && <small>{img.alt} </small>}
+                { img.creditName && <small><a href={img.creditURL}target="_blank" rel="noopener noreferrer" >{img.creditName}</a></small>}
               </li>
             );
           })}

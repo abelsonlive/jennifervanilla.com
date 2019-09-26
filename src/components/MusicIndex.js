@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import { Player } from "../utils";
-// import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class MusicIndex extends React.Component {
   render() {
