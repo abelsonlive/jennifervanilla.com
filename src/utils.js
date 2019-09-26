@@ -1,17 +1,17 @@
 import React from 'react'
 
 export const addScriptTag = (scriptUrl) => {
-    const tag = document.createElement('script')
+    const tag = window.document.createElement('script')
     tag.type = "text/javascript";
     tag.src = scriptUrl;
-    const headTag = document.getElementsByTagName('head')[0]
+    const headTag = window.document.getElementsByTagName('head')[0]
     headTag.parentNode.appendChild(tag)
 }
 
 export class Player extends React.Component {
 
     render () {
-        addScriptTag('https://w.soundcloud.com/player/api.js')
+        // addScriptTag('https://w.soundcloud.com/player/api.js')
         return (
             <iframe 
                 title="sc-player"
