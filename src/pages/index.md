@@ -1,6 +1,6 @@
 ---
 templateKey: index
 title: Jennifer Vanilla
-heading: DopeJams
-subheading: The dopest of jams
+heading: The Artist Formerly known as Jennifer Vanilla
+subheading: J.E.N.N.I.F.E.R
 ---
