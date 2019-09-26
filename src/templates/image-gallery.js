@@ -1,57 +1,59 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
-export const ImageGalleryTemplate = ({ title,  images }) => {
-
+export const ImageGalleryTemplate = ({ title, images }) => {
   return (
     <div className="section">
-      <h1>
-        { title }
-      </h1>
+      <h1>{title}</h1>
       <ul>
-      {images &&
-        images.map( (img) => {
-          const imgInfo = {image: img.image, alt: img.caption || ''};
-          return (
-          <li>
-            {img.link ? 
-              <a href={img.link}><PreviewCompatibleImage imageInfo={imgInfo}/></a> 
-              : 
-              <PreviewCompatibleImage imageInfo={imgInfo}/>
-              }
-            <br/>
-            { img.caption && <small>{img.caption} </small> }
-            {/* { img.creditName && <small><Link to={img.creditURL}>{img.creditName}</Link></small>} */}
-          </li> 
-        )}
-      )}
+        {images &&
+          images.map(img => {
+            const imgInfo = { image: img.image, alt: img.caption || "" };
+            return (
+              <li>
+                {img.link ? (
+                  <a href={img.link} target="_blank">
+                    <PreviewCompatibleImage imageInfo={imgInfo} />
+                  </a>
+                ) : (
+                  <PreviewCompatibleImage imageInfo={imgInfo} />
+                )}
+                <br />
+                {img.caption && <small>{img.caption} </small>}
+                {/* { img.creditName && <small><Link to={img.creditURL}>{img.creditName}</Link></small>} */}
+              </li>
+            );
+          })}
       </ul>
     </div>
-  )
-}
+  );
+};
 
 ImageGalleryTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   images: PropTypes.array
-}
+};
 
 const ImageGallery = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
   return (
     <Layout>
-      <ImageGalleryTemplate title={post.frontmatter.title} images={post.frontmatter.images}/>
+      <ImageGalleryTemplate
+        title={post.frontmatter.title}
+        images={post.frontmatter.images}
+      />
     </Layout>
-  )
-}
+  );
+};
 
 ImageGallery.propTypes = {
-  data: PropTypes.object.isRequired,
-}
+  data: PropTypes.object.isRequired
+};
 
-export default ImageGallery
+export default ImageGallery;
 
 export const imageGalleryQuery = graphql`
   query ImageGallery($id: String!) {
@@ -61,10 +63,10 @@ export const imageGalleryQuery = graphql`
       frontmatter {
         title
         images {
-            image
-            caption
+          image
+          caption
         }
       }
     }
   }
-`
+`;

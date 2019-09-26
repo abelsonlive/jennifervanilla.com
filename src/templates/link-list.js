@@ -13,7 +13,7 @@ export const LinkListTemplate = ({ title,  links }) => {
       {links &&
         links.map( (link) => (
           <p>
-            <a href={link.url}>
+            <a href={link.url} target="_blank">
               <i>{ link.text }</i>
             </a>
             <span > -  { link.source } </span>

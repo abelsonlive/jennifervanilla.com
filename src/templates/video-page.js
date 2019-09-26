@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
-import YouTube from 'react-youtube';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { graphql, Link } from "gatsby";
+import Layout from "../components/Layout";
+import Content, { HTMLContent } from "../components/Content";
+import YouTube from "react-youtube";
 
 export const VideoPageTemplate = ({
   content,
@@ -15,23 +15,28 @@ export const VideoPageTemplate = ({
   siteURL,
   helmet
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
 
   return (
     <section className="section">
-      {helmet || ''}
+      {helmet || ""}
       <div className="container content">
         <h2> {title} </h2>
-        { siteName &&  <small> with: <Link to={siteURL}> {siteName} </Link> </small> }
+        {siteName && (
+          <small>
+            {" "}
+            with: <Link to={siteURL}> {siteName} </Link>{" "}
+          </small>
+        )}
         <YouTube
           videoId={youTubeVideoId}
-          opts={{height: '390', width: '640' }}
+          opts={{ height: "390", width: "640" }}
         />
         <PostContent content={content} />
-       </div>
+      </div>
     </section>
-  )
-}
+  );
+};
 
 VideoPageTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -43,7 +48,7 @@ VideoPageTemplate.propTypes = {
   siteName: PropTypes.string,
   siteURL: PropTypes.string,
   helmet: PropTypes.object
-}
+};
 
 const VideoPage = ({ data }) => {
   const { markdownRemark: video } = data;
@@ -60,22 +65,19 @@ const VideoPage = ({ data }) => {
         helmet={
           <Helmet titleTemplate="%s | Event">
             <title>{video.frontmatter.title}</title>
-            <meta
-              name="description"
-              content={video.frontmatter.description}
-            />
+            <meta name="description" content={video.frontmatter.description} />
           </Helmet>
         }
       />
     </Layout>
-  )
-}
+  );
+};
 
 VideoPage.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
-}
+    markdownRemark: PropTypes.object
+  })
+};
 
 export default VideoPage;
 
@@ -93,4 +95,4 @@ export const videoPageQuery = graphql`
       }
     }
   }
-`
+`;

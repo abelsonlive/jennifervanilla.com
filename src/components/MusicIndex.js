@@ -1,37 +1,40 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import { Player } from '../utils'
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql, StaticQuery } from "gatsby";
+import { Player } from "../utils";
 // import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class MusicIndex extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: tracks } = data.allMarkdownRemark
+    const { data } = this.props;
+    const { edges: tracks } = data.allMarkdownRemark;
 
     return (
-    <div>
+      <div>
         {tracks &&
-          tracks.map(({node: track}) => (
+          tracks.map(({ node: track }) => (
             <div>
-              <center> <h3> {track.frontmatter.title} </h3> </center>
-              <Player soundcloudID={track.frontmatter.soundcloudID}/>
+              <center>
+                {" "}
+                <h3> {track.frontmatter.title} </h3>{" "}
+              </center>
+              <Player soundcloudID={track.frontmatter.soundcloudID} />
               <Link to={track.fields.slug}>📇 ...</Link>
-              <br/>
+              <br />
             </div>
           ))}
-    </div>
-    )
+      </div>
+    );
   }
 }
 
 MusicIndex.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-  }),
-}
+      edges: PropTypes.array
+    })
+  })
+};
 
 export default () => (
   <StaticQuery
@@ -63,4 +66,4 @@ export default () => (
     `}
     render={(data, count) => <MusicIndex data={data} count={count} />}
   />
-)
+);

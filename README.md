@@ -2,6 +2,7 @@
 
 ## TODO:
 - CMS-ify Layout (and sidebar links)
+- Fix Image Permissions
 - Add Social Media Links (CMS-ify?)
 - CMS-Ify page metadata (facebook debugger)
 - Figure out image preview bug 

@@ -19,9 +19,11 @@ class EventIndex extends React.Component {
               <td>
               <a
                 className="title has-text-primary is-size-4"
-                href={event.frontmatter.link}>
-              <span> {event.frontmatter.date} 〰〰〰〰〰  </span>
-              <span> @{event.frontmatter.venue}, {event.frontmatter.location} {event.frontmatter.icon}</span>
+                href={event.frontmatter.link} 
+                target="_blank"
+              >
+                <span> {event.frontmatter.date} 〰〰〰〰〰  </span>
+                <span> @{event.frontmatter.venue}, {event.frontmatter.location} {event.frontmatter.icon}</span>
               </a>
               </td>
               <td>

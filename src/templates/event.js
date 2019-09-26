@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import Content, { HTMLContent } from "../components/Content";
 
 export const EventTemplate = ({
   content,
@@ -14,18 +14,18 @@ export const EventTemplate = ({
   icon,
   helmet
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
 
   return (
     <section className="section">
-      {helmet || ''}
+      {helmet || ""}
       <div className="container content">
         <h2>{`Jennifer Vanilla @${venue} (${location}), ${date} ${icon}`}</h2>
         <PostContent content={content} />
-       </div>
+      </div>
     </section>
-  )
-}
+  );
+};
 
 EventTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -34,11 +34,11 @@ EventTemplate.propTypes = {
   date: PropTypes.string,
   location: PropTypes.string,
   venue: PropTypes.string,
-  helmet: PropTypes.object,
-}
+  helmet: PropTypes.object
+};
 
 const Event = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
@@ -52,7 +52,7 @@ const Event = ({ data }) => {
         icon={post.frontmatter.icon}
         helmet={
           <Helmet titleTemplate="%s | Event">
-            <title>{`Jennifer Vanilla @${ post.frontmatter.venue}, ${ post.frontmatter.location} on ${post.frontmatter.date}`}</title>
+            <title>{`Jennifer Vanilla @${post.frontmatter.venue}, ${post.frontmatter.location} on ${post.frontmatter.date}`}</title>
             <meta
               name="description"
               content={`${post.frontmatter.description}`}
@@ -61,16 +61,16 @@ const Event = ({ data }) => {
         }
       />
     </Layout>
-  )
-}
+  );
+};
 
 Event.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
-}
+    markdownRemark: PropTypes.object
+  })
+};
 
-export default Event
+export default Event;
 
 export const eventQuery = graphql`
   query EventByID($id: String!) {
@@ -87,4 +87,4 @@ export const eventQuery = graphql`
       }
     }
   }
-`
+`;

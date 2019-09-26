@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
-import { Player } from '../utils'
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import Content, { HTMLContent } from "../components/Content";
+import { Player } from "../utils";
 
 export const AudioPageTemplate = ({
   content,
@@ -15,19 +15,19 @@ export const AudioPageTemplate = ({
   siteURL,
   helmet
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
 
   return (
     <div className="section">
-      {helmet || ''}
+      {helmet || ""}
       <div className="container content">
         <h2> {title} </h2>
-        <Player soundcloudID={soundcloudID}/>
+        <Player soundcloudID={soundcloudID} />
         <PostContent content={content} />
-       </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 AudioPageTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -39,7 +39,7 @@ AudioPageTemplate.propTypes = {
   siteName: PropTypes.string,
   siteURL: PropTypes.string,
   helmet: PropTypes.object
-}
+};
 
 const AudioPage = ({ data }) => {
   const { markdownRemark: audio } = data;
@@ -56,24 +56,24 @@ const AudioPage = ({ data }) => {
         helmet={
           <Helmet titleTemplate="%s | Event">
             <title>{audio.frontmatter.title}</title>
-            
-            <meta
-              name="description"
-              content={audio.frontmatter.description}
-            />
-            <script type="text/javascript" src="https://w.soundcloud.com/player/api.js"></script>
+
+            <meta name="description" content={audio.frontmatter.description} />
+            <script
+              type="text/javascript"
+              src="https://w.soundcloud.com/player/api.js"
+            ></script>
           </Helmet>
         }
       />
     </Layout>
-  )
-}
+  );
+};
 
 AudioPage.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
-}
+    markdownRemark: PropTypes.object
+  })
+};
 
 export default AudioPage;
 
@@ -91,4 +91,4 @@ export const audioPageQuery = graphql`
       }
     }
   }
-`
+`;

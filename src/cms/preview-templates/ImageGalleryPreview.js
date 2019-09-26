@@ -1,26 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { ImageGalleryTemplate } from '../../templates/image-gallery'
+import React from "react";
+import PropTypes from "prop-types";
+import { ImageGalleryTemplate } from "../../templates/image-gallery";
 
 const ImageGalleryPreview = ({ entry, getAsset }) => {
-  const data = entry.getIn(['data'])
+  const data = entry.getIn(["data"]);
   if (data) {
-    return (
-      <ImageGalleryTemplate
-        title={data.title}
-        images={data.images}
-      />
-    )
+    return <ImageGalleryTemplate title={data.title} images={data.images} />;
   } else {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
-}
+};
 
 ImageGalleryPreview.propTypes = {
   entry: PropTypes.shape({
-    getIn: PropTypes.func,
+    getIn: PropTypes.func
   }),
-  getAsset: PropTypes.func,
-}
+  getAsset: PropTypes.func
+};
 
-export default ImageGalleryPreview
+export default ImageGalleryPreview;

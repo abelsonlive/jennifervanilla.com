@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
-import Layout from '../../components/Layout'
-import MusicIndex from '../../components/MusicIndex'
+import Layout from "../../components/Layout";
+import MusicIndex from "../../components/MusicIndex";
 
 export default class MusicIndexPage extends React.Component {
   render() {
@@ -13,6 +13,6 @@ export default class MusicIndexPage extends React.Component {
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }
