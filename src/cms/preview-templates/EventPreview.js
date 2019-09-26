@@ -14,11 +14,6 @@ const EventPreview = ({ entry, widgetFor }) => (
   />
 )
 
-date,
-venue,
-location,
-icon,
-
 EventPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
