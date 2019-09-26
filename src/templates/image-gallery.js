@@ -62,7 +62,6 @@ export const imageGalleryQuery = graphql`
         title
         images {
             image
-            link
             caption
         }
       }
