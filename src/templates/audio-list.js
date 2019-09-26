@@ -13,7 +13,7 @@ export const AudioListTemplate = ({ title, sounds }) => {
       <ul>
       {sounds &&
         sounds.map( (sound) => (
-          <li key={sound.soundcloudID}>
+          <li>
             <Player soundcloudID={sound.soundcloudID}/>
           </li>
         )
