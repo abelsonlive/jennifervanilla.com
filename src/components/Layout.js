@@ -76,7 +76,7 @@ const TemplateWrapper = ({ children }) => {
               <td height="115" valign="top">
                   <a href="/who-is-she" className="nav-link"> Who Is She?</a>
                   <br/>
-                  <a href="/events" className="nav-link">Videos</a>
+                  <a href="/videos" className="nav-link">Videos</a>
                   <br/>
                   <a href="/events" className="nav-link">Events</a>
                   <br/>

@@ -41,10 +41,11 @@ collections:
   - name: "videos"
     label: "Video"
     folder: "src/pages/videos"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Slug", name: "slug", widget: "string"}
+      - { label: "Title", name: "title", widget: "string"}
+      - { label: "Date", name: "date", widget: "datetime"}
       - { label: Youtube, name: video,  widget: youtube, extraInfo: true, APIkey: AIzaSyAkehfEmpJcJfvuGT6-OYu7swFPcBkncG4}
       - { label: "Site Name", name: siteName, widget: string, required: false}
       - { label: "Site URL", name: siteURL, widget: string, required: false}
