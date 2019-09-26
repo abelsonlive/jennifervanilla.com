@@ -1,7 +1,7 @@
 ---
 templateKey: image-gallery
 title: T-shirts
-shirts:
+images:
   - caption: original jv shirts!!!!!!!
     image: /img/0010794204_36.jpg
     link: >-
