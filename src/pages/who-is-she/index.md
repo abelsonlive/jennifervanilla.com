@@ -1,6 +1,6 @@
 ---
 templateKey: default
-title: Who Is She?
+title: Who Is Jennifer?
 ---
 
 Jennifer Vanilla is the entrepreneurial fantasy vessel LARP-ed into reality by Becca Kauffman, a New York City performance artist and long-standing member of art rock band, Ava Luna. Her commercial-inspired vocalizations, paired with reconstructions (or "jv edits") of 90's house tracks, are inflected with homages to Will Powers, Ann Steel, and Laurie Anderson, and provide the foundation for her comedic motivational live performances.
