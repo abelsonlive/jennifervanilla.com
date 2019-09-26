@@ -8,13 +8,18 @@ import EventPreview from './preview-templates/EventPreview'
 import VideoPreview from './preview-templates/VideoPreview'
 import ImageGalleryPreview from './preview-templates/ImageGalleryPreview'
 import LinkListPreview from './preview-templates/LinkListPreview'
+import ImageGalleryPreview from './preview-templates/ImageGalleryPreview'
+import AudioPreview from './preview-templates/AudioPreview'
+import AudioListPreview from './preview-templates/AudioListPreview'
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
 
 CMS.registerPreviewTemplate('index', IndexPreview)
 CMS.registerPreviewTemplate('default', DefaultPreview)
-CMS.registerPreviewTemplate('video', VideoPreview)
+CMS.registerPreviewTemplate('video-page', VideoPreview)
+CMS.registerPreviewTemplate('audio-page', AudioPreview)
 CMS.registerPreviewTemplate('event', EventPreview)
 CMS.registerPreviewTemplate('link-list', LinkListPreview)
+CMS.registerPreviewTemplate('audio-list', AudioListPreview)
 CMS.registerPreviewTemplate('image-gallery', ImageGalleryPreview)

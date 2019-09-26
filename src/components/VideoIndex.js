@@ -18,7 +18,10 @@ class VideoIndex extends React.Component {
               <center> <h3> {video.frontmatter.title} </h3> </center>
               <YouTube
                 videoId={video.frontmatter.youTubeVideoId}
-                opts={{height: '390', width: '640' }}
+                host='https://www.youtube.com'
+                opts={{height: '390', width: '640', playerVars: {
+                  origin:'http://localhost:8100'
+                }}}
               />
               <Link to={video.fields.slug}>📇 ...</Link>
               <br/>
