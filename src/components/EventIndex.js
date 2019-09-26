@@ -10,15 +10,12 @@ class EventIndex extends React.Component {
 
     return (
       <table style={{borderCollapse: 'collapse'}} 
-             cellSpacing="2" 
-             cellPadding="2" 
-             borderColor="A90015" 
-             border="1" 
-             align="left">
+        align="left"
+      >
         <tbody>
         {events &&
           events.map(({ node: event }) => (
-            <tr borderColor="A90015" border="1" align="center">
+            <tr align="center">
               <td>
               <Link
                 className="title has-text-primary is-size-4"

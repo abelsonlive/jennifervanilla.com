@@ -37,8 +37,9 @@ collections:
             widget: "list"
             fields: 
             - {label: "Image", name: "image", widget: "image"}
-            - {label: "Photgrapher", name: "creditName", widget: "string"}
-            - {label: "Photographer URL", name: "creditURL", widget: "string"}
+            - {label: "Link", name: "link", widget: "string", required: false}
+            - {label: "Photgrapher", name: "creditName", widget: "string", required: false}
+            - {label: "Photographer URL", name: "creditURL", widget: "string" required: false}}
             - {label: "Caption", name: "caption", widget: "markdown", required: false}
     
       - file: "src/pages/web-ring/index.md"
@@ -54,6 +55,33 @@ collections:
               - { label: "URL", name: "url", widget: "string" }
               - { label: "Text", name: "text", widget: "string" }
               - { label: "Source", name: "source", widget: "string" }
+
+      - file: "src/pages/t-shirts/index.md"
+        label: "T-Shirts"
+        name: "t-shirts"
+        fields: 
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "image-gallery"}
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "Shirts"
+            name: "shirts"
+            widget: "list"
+            fields: 
+            - {label: "Image", name: "image", widget: "image"}
+            - {label: "Purchase Link", name: "link", widget: "string",}
+            - {label: "Description", name: "caption", widget: "markdown", required: false}
+  
+      - file: "src/pages/sounds/index.md"
+        label: "Audio Bank"
+        name: "sounds"
+        fields: 
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "audio-list"}
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "Sounds"
+            name: "sounds"
+            widget: "list"
+            fields: 
+            - { label: 'Title', name: title,  widget: string }
+            - { label: 'Soundcloud Track ID', name: soundcloudID,  widget: string }
 
       - file: "src/pages/public-eye/index.md"
         label: "Public Eye"
@@ -98,3 +126,18 @@ collections:
       - {label: "Icon", name: "icon", widget: "string"}
       - {label: "Description", name: "description", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "music"
+    label: "Music"
+    folder: "src/pages/music"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "audio-page"}
+      - { label: "Title", name: "title", widget: "string"}
+      - { label: "Date", name: "date", widget: "datetime"}
+      - { label: Description, name: description, widget: string, required: false}
+      - { label: 'Soundcloud Track ID', name: soundcloudID,  widget: string }
+      - { label: "Site Name", name: siteName, widget: string, required: false}
+      - { label: "Site URL", name: siteURL, widget: string, required: false}
+      - { label: "Body", name: "body", widget: "markdown"}

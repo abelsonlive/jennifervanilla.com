@@ -44,6 +44,7 @@ const TemplateWrapper = ({ children }) => {
       <meta property="og:title" content={title} />
       <meta property="og:url" content="/" />
       <meta property="og:image" content={`${withPrefix("/")}img/og-image.jpg`} />
+      <script type="text/javascript" src="https://w.soundcloud.com/player/api.js"></script>
     </Helmet>
     <body style={{backgroundImage: bg }}>
     <table width="75%" border="1" align="left" cellPadding="1" cellSpacing="1">
@@ -74,17 +75,23 @@ const TemplateWrapper = ({ children }) => {
             <tbody>
             <tr>
               <td height="115" valign="top">
-                  <a href="/who-is-she" className="nav-link"> Who Is She?</a>
+                  <a href="/who-is-she" className="nav-link">Who Is She?</a>
                   <br/>
                   <a href="/videos" className="nav-link">Videos</a>
+                  <br/>
+                  <a href="/music" className="nav-link">Music</a>
                   <br/>
                   <a href="/gallery" className="nav-link">Gallery</a>
                   <br/>
                   <a href="/events" className="nav-link">Events</a>
                   <br/>
-                  <a href="/public-eye" className="nav-link">"Public Eye"</a>
+                  <a href="/t-shirts" className="nav-link">T-Shirts</a>
+                  <br/>
+                  <a href="/sounds" className="nav-link">Sound Bank</a>
                   <br/>
                   <a href="/web-ring" className="nav-link">Jennifer Pages</a>
+                  <br/>
+                  <a href="/public-eye" className="nav-link">"Public Eye"</a>
                   <br/>
                   <a href="/contact" className="nav-link">Contact</a>
                   <br/>
