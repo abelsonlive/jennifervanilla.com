@@ -10,10 +10,12 @@ public_folder: /img
 collections:
   - name: "pages"
     label: "Pages"
+    delete: false 
     files:
       - file: "src/pages/index.md"
         label: "Landing Page"
         name: "index"
+        delete: false 
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index"}
           - {label: Title, name: title, widget: string}
@@ -23,6 +25,7 @@ collections:
       - file: "src/pages/who-is-she/index.md"
         label: "Who Is She?"
         name: "who-is-she"
+        delete: false 
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "default"}
           - {label: "Title", name: "title", widget: "string"}
@@ -31,6 +34,7 @@ collections:
       - file: "src/pages/gallery/index.md"
         label: "Gallery"
         name: "gallery"
+        delete: false 
         fields: 
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "image-gallery"}
           - {label: "Title", name: "title", widget: "string"}
@@ -47,6 +51,7 @@ collections:
       - file: "src/pages/web-ring/index.md"
         label: "Jennifer Pages"
         name: "web-ring"
+        delete: false 
         fields: 
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "link-list"}
           - {label: "Title", name: "title", widget: "string"}
@@ -61,6 +66,7 @@ collections:
       - file: "src/pages/t-shirts/index.md"
         label: "T-Shirts"
         name: "t-shirts"
+        delete: false 
         fields: 
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "image-gallery"}
           - {label: "Title", name: "title", widget: "string"}
@@ -75,6 +81,7 @@ collections:
       - file: "src/pages/sounds/index.md"
         label: "Audio Bank"
         name: "sounds"
+        delete: false 
         fields: 
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "audio-list"}
           - {label: "Title", name: "title", widget: "string"}
@@ -88,6 +95,7 @@ collections:
       - file: "src/pages/public-eye/index.md"
         label: "Public Eye"
         name: "public-eye"
+        delete: false 
         fields: 
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "link-list"}
           - {label: "Title", name: "title", widget: "string"}
