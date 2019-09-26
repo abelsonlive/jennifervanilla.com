@@ -1,11 +1,16 @@
 body { 
   background-image: url('../img/bg.jpg');
-  color: #FFFFFF;
+  color: #000000;
 	margin-top: 25px;
 	margin-right:25px;
 	margin-bottom:15px;
 	margin-left:25px;
 }
+
+.content {
+	color: #000000;
+	margin: 1em;
+  }
 .nav-link {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18px;
@@ -77,9 +82,4 @@ body {
 	color: #FFFFFF;
 	font-weight: normal;
 	text-align: center;
-}
-
-.content {
-  color: #000000;
-  margin: 1em;
 }
