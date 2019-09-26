@@ -1,7 +1,28 @@
 ---
 templateKey: link-list
-title: Web Ring
+title: 'web ring'
 links:
+    - url: https://abelson.live
+      text: Brian Abelson
+      source: hacker in residence, JVU
+    - url: https://abelson.live
+      text: Brian Abelson
+      source: hacker in residence, JVU
+    - url: https://abelson.live
+      text: Brian Abelson
+      source: hacker in residence, JVU
+    - url: https://abelson.live
+      text: Brian Abelson
+      source: hacker in residence, JVU
+    - url: https://abelson.live
+      text: Brian Abelson
+      source: hacker in residence, JVU
+    - url: https://abelson.live
+      text: Brian Abelson
+      source: hacker in residence, JVU
+    - url: https://abelson.live
+      text: Brian Abelson
+      source: hacker in residence, JVU
     - url: https://abelson.live
       text: Brian Abelson
       source: hacker in residence, JVU

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
 import './all.css'
 import useSiteMetadata from './SiteMetadata'
@@ -12,7 +12,7 @@ import topBanner from '../img/top-banner.gif';
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
-    <div>
+    <Fragment>
     <Helmet>
       <html lang="en" />
       <title>{title}</title>
@@ -109,7 +109,7 @@ const TemplateWrapper = ({ children }) => {
       </tbody>
     </table>
     </body>
-  </div>
+  </Fragment>
   )
 }
 

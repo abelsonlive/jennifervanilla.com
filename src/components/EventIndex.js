@@ -17,12 +17,12 @@ class EventIndex extends React.Component {
           events.map(({ node: event }) => (
             <tr align="center">
               <td>
-              <Link
+              <a
                 className="title has-text-primary is-size-4"
-                to={event.frontmatter.link}>
+                href={event.frontmatter.link}>
               <span> {event.frontmatter.date} 〰〰〰〰〰  </span>
               <span> @{event.frontmatter.venue}, {event.frontmatter.location} {event.frontmatter.icon}</span>
-              </Link>
+              </a>
               </td>
               <td>
                 <Link className="button" to={event.fields.slug}>

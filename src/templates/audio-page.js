@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import Player from 'react-soundcloud-widget-player'
@@ -18,17 +18,14 @@ export const AudioPageTemplate = ({
   const PostContent = contentComponent || Content
 
   return (
-    <section className="section">
+    <div className="section">
       {helmet || ''}
       <div className="container content">
         <h2> {title} </h2>
-        <Player title={title} track={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${soundcloudID}`}/>
-        <br/>
-        { siteName &&  <small> with: <Link to={siteURL}> {siteName} </Link> </small> }
-        <br/>
+        <Player title={title} audioUrl={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${soundcloudID}`}/>
         <PostContent content={content} />
        </div>
-    </section>
+    </div>
   )
 }
 

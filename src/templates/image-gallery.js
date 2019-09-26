@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
 export const ImageGalleryTemplate = ({ title,  images }) => {
@@ -16,7 +16,7 @@ export const ImageGalleryTemplate = ({ title,  images }) => {
           return (
           <li>
             {img.link ? 
-              <Link to={img.link}> <img src={img.image} alt={img.caption || ''}/></Link>
+              <a href={img.link}> <img src={img.image} alt={img.caption || ''}/></a>
               : 
               <img src={img.image} alt={img.caption || ''}/>
               }

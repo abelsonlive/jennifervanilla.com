@@ -1,30 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
 export const LinkListTemplate = ({ title,  links }) => {
 
   return (
-    <div className="section">
-      <h1>
+    <div>
+      <h2>
         { title }
-      </h1>
-      <ul>
+      </h2>
       {links &&
         links.map( (link) => (
-          <li>
-            <Link to={link.url}>
+          <p>
+            <a href={link.url}>
               <i>{ link.text }</i>
-            </Link>
-            <br/>
+            </a>
             <span > -  { link.source } </span>
-          </li> 
+          </p>
         )
       )}
-      </ul>
     </div>
-  )
+  );
 }
 
 LinkListTemplate.propTypes = {
