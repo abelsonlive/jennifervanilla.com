@@ -15,7 +15,7 @@ CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
 
 CMS.registerPreviewTemplate('index', IndexPreview)
-CMS.registerPreviewTemplate('who-ise-she', DefaultPreview)
+CMS.registerPreviewTemplate('who-is-she', DefaultPreview)
 CMS.registerPreviewTemplate('videos', VideoPreview)
 CMS.registerPreviewTemplate('events', EventPreview)
 CMS.registerPreviewTemplate('web-ring', LinkListPreview)
