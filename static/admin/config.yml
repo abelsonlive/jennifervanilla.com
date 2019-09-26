@@ -39,7 +39,7 @@ collections:
             - {label: "Image", name: "image", widget: "image"}
             - {label: "Link", name: "link", widget: "string", required: false}
             - {label: "Photgrapher", name: "creditName", widget: "string", required: false}
-            - {label: "Photographer URL", name: "creditURL", widget: "string" required: false}}
+            - {label: "Photographer URL", name: "creditURL", widget: "string", required: false}}
             - {label: "Caption", name: "caption", widget: "markdown", required: false}
     
       - file: "src/pages/web-ring/index.md"
