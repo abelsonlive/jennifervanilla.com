@@ -62,8 +62,14 @@ export const imageGalleryQuery = graphql`
       frontmatter {
         title
         images {
-          image
           caption
+          image {
+            childImageSharp {
+              fluid(maxWidth: 240, quality: 64) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
