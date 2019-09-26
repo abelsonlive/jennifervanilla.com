@@ -3,43 +3,40 @@ import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-class BlogRoll extends React.Component {
+class ShowIndex extends React.Component {
   render() {
     const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { edges: shows } = data.allMarkdownRemark
 
     return (
       <table style={{borderCollapse: 'collapse'}} width="700" height="450" cellspacing="0" cellpadding="0" bordercolor="A90015" border="1" align="center">
         <tbody>
-        {posts &&
-          posts.map(({ node: post }) => (
-            <tr>
-              <div className="is-parent column is-6" key={post.id}>
+        {shows &&
+          shows.map(({ node: show }) => (
+            <tr bordercolor="A90015" border="1" align="center">
+              <div className="is-parent column is-6" key={show.id}>
                 <article
-                  className={`blog-list-item tile is-child box notification ${
-                    post.frontmatter.featuredpost ? 'is-featured' : ''
-                  }`}
-                >
+                  className={`blog-list-item tile is-child box notification`}>
                   <header>
-                    <p className="post-meta">
+                    <p className="show-meta">
                       <Link
                         className="title has-text-primary is-size-4"
-                        to={post.fields.slug}
+                        to={show.frontmatter.link}
                       >
-                        {post.frontmatter.title}
+                        {show.frontmatter.title}
                       </Link>
                       <span> &bull; </span>
                       <span className="subtitle is-size-5 is-block">
-                        {post.frontmatter.date}
+                        {show.frontmatter.date}
                       </span>
                     </p>
                   </header>
                   <p>
-                    {post.excerpt}
+                    {show.description}
                     <br />
                     <br />
-                    <Link className="button" to={post.fields.slug}>
-                      Keep Reading →
+                    <Link className="button" to={show.fields.slug}>
+                      See More →
                     </Link>
                   </p>
                 </article>
@@ -52,7 +49,7 @@ class BlogRoll extends React.Component {
   }
 }
 
-BlogRoll.propTypes = {
+ShowIndex.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -63,36 +60,29 @@ BlogRoll.propTypes = {
 export default () => (
   <StaticQuery
     query={graphql`
-      query BlogRollQuery {
+      query ShowIndexQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+          filter: { frontmatter: { templateKey: { eq: "show" } } }
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
               id
               fields {
                 slug
               }
               frontmatter {
-                title
                 templateKey
+                name
+                link
                 date(formatString: "MMMM DD, YYYY")
-                featuredpost
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
+                description
               }
             }
           }
         }
       }
     `}
-    render={(data, count) => <BlogRoll data={data} count={count} />}
+    render={(data, count) => <ShowIndex data={data} count={count} />}
   />
 )
