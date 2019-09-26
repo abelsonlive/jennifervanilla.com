@@ -11,15 +11,14 @@ export const ImageGalleryTemplate = ({ title, images }) => {
       <ul>
         {images &&
           images.map(img => {
-            const imgInfo = { image: img.image, alt: img.caption || "" };
             return (
               <li>
                 {img.link ? (
                   <a href={img.link} target="_blank">
-                    <PreviewCompatibleImage imageInfo={imgInfo} />
+                    <PreviewCompatibleImage imageInfo={img} />
                   </a>
                 ) : (
-                  <PreviewCompatibleImage imageInfo={imgInfo} />
+                  <PreviewCompatibleImage imageInfo={img} />
                 )}
                 <br />
                 {img.caption && <small>{img.caption} </small>}
