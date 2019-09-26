@@ -7,7 +7,7 @@ import { withPrefix } from "gatsby"
 import bg from '../img/bg.jpg';
 import sidePanel from '../img/side-panel.jpg';
 import welcome from '../img/welcome.gif';
-import topBanner from '../img/top-banner.gif';
+import topBanner from '../img/top-banner.png';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
