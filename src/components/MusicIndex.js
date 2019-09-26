@@ -15,7 +15,7 @@ class MusicIndex extends React.Component {
           tracks.map(({node: track}) => (
             <div>
               <center> <h3> {track.frontmatter.title} </h3> </center>
-              <Player souncloudID={track.frontmatter.soundcloudID}/>
+              <Player soundcloudID={track.frontmatter.soundcloudID}/>
               <Link to={track.fields.slug}>📇 ...</Link>
               <br/>
             </div>

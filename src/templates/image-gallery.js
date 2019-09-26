@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
 export const ImageGalleryTemplate = ({ title,  images }) => {
 
@@ -13,12 +14,13 @@ export const ImageGalleryTemplate = ({ title,  images }) => {
       <ul>
       {images &&
         images.map( (img) => {
+          const imgInfo = {image: img.image, alt: img.caption || ''};
           return (
           <li>
             {img.link ? 
-              <a href={img.link}> <img src={img.image} alt={img.caption || ''}/></a>
+              <a href={img.link}><PreviewCompatibleImage imageInfo={imgInfo}/></a> 
               : 
-              <img src={img.image} alt={img.caption || ''}/>
+              <PreviewCompatibleImage imageInfo={imgInfo}/>
               }
             <br/>
             { img.caption && <small>{img.caption} </small> }
