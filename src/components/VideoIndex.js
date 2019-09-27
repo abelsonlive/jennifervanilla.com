@@ -19,6 +19,7 @@ class VideoIndex extends React.Component {
             host="https://www.youtube.com"
             opts={{
               width: "100%",
+              height: "100%",
               playerVars: {
                 origin: "https://www.youtube.com"
               }

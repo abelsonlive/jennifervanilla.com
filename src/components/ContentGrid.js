@@ -17,8 +17,9 @@ export const ContentGrid = ({
   return (
     <Row gutter={gutter}>
       {components &&
-        components.map(child => (
+        components.map((child, index) => (
           <Col
+            key={index}
             xs={{ span: xs || n }}
             sm={{ span: sm }}
             md={{ span: md }}

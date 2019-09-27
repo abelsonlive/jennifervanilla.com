@@ -31,8 +31,11 @@ export const ImageGalleryTemplate = ({ title, images }) => {
     <div>
       <ContentGrid
         components={components}
-        xs={components.length + 2}
-        sm={5}
+        xs={components.length+2}
+        sm={components.length+2}
+        md={components.length+2}
+        lg={components.length+2}
+        xl={components.length+2}
         gutter={20}
       />
     </div>
