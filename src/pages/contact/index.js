@@ -37,7 +37,7 @@ export default class Index extends React.Component {
     return (
       <Layout>
             <div>
-              <h1>Contact Jennifer</h1>
+              <h3>Contact Jennifer</h3>
               <form
                 name="contact"
                 method="post"

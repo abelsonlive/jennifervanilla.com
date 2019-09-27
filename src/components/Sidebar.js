@@ -93,7 +93,7 @@ export default class Sidebar extends React.Component {
       {navLinks.map(link => {
         return (
           <span className="nav-link">
-            <a href={link.path} className="nav-url">
+            <a href={link.path} className="nav-url" target={link.ext ? '_blank': undefined} >
               <span className="nav-emoji"> {link.emoji} </span>
               <span> | </span>
               <span className="nav-text">{link.text}</span>

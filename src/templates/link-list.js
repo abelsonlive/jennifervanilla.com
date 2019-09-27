@@ -7,9 +7,9 @@ export const LinkListTemplate = ({ title,  links }) => {
 
   return (
     <div>
-      <h2>
+      <h3>
         { title }
-      </h2>
+      </h3>
       {links &&
         links.map( (link) => (
           <p>

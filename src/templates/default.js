@@ -8,8 +8,8 @@ export const DefaultTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
-    <div className="section">
-      <h2> {title} </h2>
+    <div>
+      <h3> {title} </h3>
       <PageContent content={content} />
     </div>
   );
