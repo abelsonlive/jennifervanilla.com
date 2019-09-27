@@ -12,7 +12,7 @@ class VideoIndex extends React.Component {
     const components = videos &&
       videos.map(({ node: video }) => (
         <div>
-          <h3> {video.frontmatter.title} </h3>{" "}
+          <p> {video.frontmatter.title} </p>
           <YouTube
             videoId={video.frontmatter.youTubeVideoId}
             className="youtube-video"

@@ -71,7 +71,6 @@ export default class NavLinks extends React.Component {
             >
               <span className="nav-emoji"> {link.emoji} </span>
               <span className="nav-text">
-                <span> | </span>
                 {link.text}
               </span>
             </a>

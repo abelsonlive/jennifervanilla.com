@@ -21,7 +21,7 @@ const socialLinks = [
   },
   {
     path: "https://jennifervanilla.bandcamp.com/",
-    emoji: "🔗",
+    emoji:  "🔗",
     text: "Bandcamp",
     ext: true
   },

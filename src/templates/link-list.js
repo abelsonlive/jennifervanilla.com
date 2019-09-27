@@ -16,6 +16,7 @@ export const LinkListTemplate = ({ title,  links }) => {
             <a href={link.url} target="_blank" rel="noopener noreferrer">
               <i>{ link.text }</i>
             </a>
+            <br/>
             <span > -  { link.source } </span>
           </p>
         )

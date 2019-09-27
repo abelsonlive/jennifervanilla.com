@@ -16,11 +16,13 @@ class EventIndex extends React.Component {
               <p>
               <a
                 className=""
-                href={event.frontmatter.link} 
-                target="_blank"
+                href={event.fields.slug} 
               >
                 <span> {event.frontmatter.date} 〰〰〰〰〰  </span>
                 <span> @{event.frontmatter.venue}, {event.frontmatter.location} {event.frontmatter.icon}</span>
+              </a>]
+              <a href={event.frontmatter.link} target="_blank">
+                -->
               </a>
               </p>
           ))}

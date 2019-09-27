@@ -12,6 +12,7 @@ class MusicIndex extends React.Component {
       const components = tracks &&
         tracks.map( ({ node: track }) => (
             <div className="player">
+              <p>{track.frontmatter.title}</p>
               <Player soundcloudID={track.frontmatter.soundcloudID} />
               <Link to={track.fields.slug}> READ MORE </Link>
             </div>
@@ -26,6 +27,7 @@ class MusicIndex extends React.Component {
           <ContentGrid 
             components={this.getComponents()}
             childClassName="player-container"
+            lg={6}
               />
         </div>
       );
