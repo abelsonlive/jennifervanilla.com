@@ -7,11 +7,7 @@ export default class MusicIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <div className="container">
-          <div className="content">
-            <MusicIndex />
-          </div>
-        </div>
+        <MusicIndex />
       </Layout>
     );
   }

@@ -6,13 +6,13 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 export const ImageGalleryTemplate = ({ title, images }) => {
   return (
-    <div className="section">
-      <h1>{title}</h1>
-      <ul>
+    <div>
+      <h3>{title}</h3>
+      <div>
         {images &&
           images.map(img => {
             return (
-              <li>
+              <div>
                 {img.link ? (
                   <a href={img.link} target="_blank" rel="noopener noreferrer">
                     <PreviewCompatibleImage imageInfo={img} />
@@ -23,10 +23,10 @@ export const ImageGalleryTemplate = ({ title, images }) => {
                 <br />
                 {img.alt && <small>{img.alt} </small>}
                 { img.creditName && <small><a href={img.creditURL}target="_blank" rel="noopener noreferrer" >{img.creditName}</a></small>}
-              </li>
+              </div>
             );
           })}
-      </ul>
+      </div>
     </div>
   );
 };

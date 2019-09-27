@@ -18,13 +18,11 @@ export const AudioPageTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <div className="section">
+    <div>
       {helmet || ""}
-      <div className="container content">
-        <h2> {title} </h2>
-        <Player soundcloudID={soundcloudID} />
-        <PostContent content={content} />
-      </div>
+      <h3> {title} </h3>
+      <Player soundcloudID={soundcloudID} />
+      <PostContent content={content} />
     </div>
   );
 };

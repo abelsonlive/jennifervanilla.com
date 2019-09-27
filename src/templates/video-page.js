@@ -18,10 +18,10 @@ export const VideoPageTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <div>
       {helmet || ""}
-      <div className="container content">
-        <h2> {title} </h2>
+      <div>
+        <h3> {title} </h3>
         {siteName && (
           <small>
             {" "}
@@ -34,7 +34,7 @@ export const VideoPageTemplate = ({
         />
         <PostContent content={content} />
       </div>
-    </section>
+    </div>
   );
 };
 

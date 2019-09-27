@@ -9,32 +9,22 @@ class EventIndex extends React.Component {
     const { edges: events } = data.allMarkdownRemark
 
     return (
-      <table style={{borderCollapse: 'collapse'}} 
-        align="left"
-      >
-        <tbody>
+      <div className="events-page">
+        <h3>Events</h3>
         {events &&
           events.map(({ node: event }) => (
-            <tr align="center">
-              <td>
+              <p>
               <a
-                className="title has-text-primary is-size-4"
+                className=""
                 href={event.frontmatter.link} 
                 target="_blank"
               >
                 <span> {event.frontmatter.date} 〰〰〰〰〰  </span>
                 <span> @{event.frontmatter.venue}, {event.frontmatter.location} {event.frontmatter.icon}</span>
               </a>
-              </td>
-              <td>
-                <Link className="button" to={event.fields.slug}>
-                  ->
-                </Link>
-              </td>
-            </tr>
+              </p>
           ))}
-        </tbody>
-      </table>
+      </div>
     )
   }
 }

@@ -6,16 +6,16 @@ import { Player } from "../utils";
 
 export const AudioListTemplate = ({ title, sounds }) => {
   return (
-    <div className="section">
-      <h1>{title}</h1>
-      <ul>
+    <div>
+      <h3>{title}</h3>
+      <div>
         {sounds &&
           sounds.map(sound => (
-            <li>
+            <div className="player">
               <Player soundcloudID={sound.soundcloudID} />
-            </li>
+            </div>
           ))}
-      </ul>
+      </div>
     </div>
   );
 };

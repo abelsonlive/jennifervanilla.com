@@ -7,11 +7,7 @@ export default class EventIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <div className="container">
-          <div className="content">
-            <EventIndex />
-          </div>
-        </div>
+        <EventIndex />
       </Layout>
     )
   }

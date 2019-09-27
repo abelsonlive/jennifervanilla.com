@@ -13,12 +13,10 @@ class VideoIndex extends React.Component {
         {videos &&
           videos.map(({ node: video }) => (
             <div>
-              <center>
-                {" "}
-                <h3> {video.frontmatter.title} </h3>{" "}
-              </center>
+              <h3> {video.frontmatter.title} </h3>{" "}
               <YouTube
                 videoId={video.frontmatter.youTubeVideoId}
+                className="youtube-video"
                 host="https://www.youtube.com"
                 opts={{
                   height: "390",
@@ -28,7 +26,7 @@ class VideoIndex extends React.Component {
                   }
                 }}
               />
-              <Link to={video.fields.slug}>📇 ...</Link>
+              <Link to={video.fields.slug}>READ MORE ...</Link>
               <br />
               {video.frontmatter.siteName && (
                 <Link to={video.frontmatter.siteURL}>

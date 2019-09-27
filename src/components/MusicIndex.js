@@ -12,14 +12,10 @@ class MusicIndex extends React.Component {
       <div>
         {tracks &&
           tracks.map(({ node: track }) => (
-            <div>
-              <center>
-                {" "}
-                <h3> {track.frontmatter.title} </h3>{" "}
-              </center>
+            <div className="player">
+              <h3> {track.frontmatter.title} </h3>
               <Player soundcloudID={track.frontmatter.soundcloudID} />
-              <Link to={track.fields.slug}>📇 ...</Link>
-              <br />
+              <Link to={track.fields.slug}> READ MORE </Link>
             </div>
           ))}
       </div>
