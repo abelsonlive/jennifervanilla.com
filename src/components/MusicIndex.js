@@ -27,7 +27,7 @@ class MusicIndex extends React.Component {
           <ContentGrid 
             components={this.getComponents()}
             childClassName="player-container"
-            lg={6}
+            xs={10}
               />
         </div>
       );
