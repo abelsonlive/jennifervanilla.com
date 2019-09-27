@@ -10,7 +10,7 @@ class EventIndex extends React.Component {
 
     return (
       <div className="events-page">
-        <h3>Events</h3>
+        <h3>See Jennifer!</h3>
         {events &&
           events.map(({ node: event }) => (
               <p>
