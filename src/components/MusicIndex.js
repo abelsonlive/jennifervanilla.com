@@ -2,25 +2,34 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import { Player } from "../utils";
+import { ContentGrid } from './ContentGrid';
 
 class MusicIndex extends React.Component {
-  render() {
-    const { data } = this.props;
-    const { edges: tracks } = data.allMarkdownRemark;
 
-    return (
-      <div>
-        {tracks &&
-          tracks.map(({ node: track }) => (
+    getComponents = () => {
+      const { data } = this.props;
+      const { edges: tracks } = data.allMarkdownRemark;
+      const components = tracks &&
+        tracks.map( ({ node: track }) => (
             <div className="player">
-              <h3> {track.frontmatter.title} </h3>
               <Player soundcloudID={track.frontmatter.soundcloudID} />
               <Link to={track.fields.slug}> READ MORE </Link>
             </div>
-          ))}
-      </div>
-    );
-  }
+        )
+        )
+      return components;
+    }
+    
+    render() {
+      return (
+        <div className="music-index">
+          <ContentGrid 
+            components={this.getComponents()}
+            childClassName="player-container"
+              />
+        </div>
+      );
+    }
 }
 
 MusicIndex.propTypes = {

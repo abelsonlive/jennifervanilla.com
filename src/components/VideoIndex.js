@@ -2,44 +2,53 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import YouTube from "react-youtube";
+import { ContentGrid } from './ContentGrid';
 
 class VideoIndex extends React.Component {
-  render() {
+
+  getComponents = () => {
     const { data } = this.props;
     const { edges: videos } = data.allMarkdownRemark;
+    const components = videos &&
+      videos.map(({ node: video }) => (
+        <div>
+          <h3> {video.frontmatter.title} </h3>{" "}
+          <YouTube
+            videoId={video.frontmatter.youTubeVideoId}
+            className="youtube-video"
+            host="https://www.youtube.com"
+            opts={{
+              width: "100%",
+              playerVars: {
+                origin: "https://www.youtube.com"
+              }
+            }}
+          />
+          <Link to={video.fields.slug}>READ MORE ...</Link>
+          <br />
+          {video.frontmatter.siteName && (
+            <Link to={video.frontmatter.siteURL}>
+              {" "}
+              <small> 📖 {video.frontmatter.siteName} </small>{" "}
+            </Link>
+          )}
+        </div>
+      ))
+    return components;
+  }
 
+  render() {
     return (
-      <div>
-        {videos &&
-          videos.map(({ node: video }) => (
-            <div>
-              <h3> {video.frontmatter.title} </h3>{" "}
-              <YouTube
-                videoId={video.frontmatter.youTubeVideoId}
-                className="youtube-video"
-                host="https://www.youtube.com"
-                opts={{
-                  height: "390",
-                  width: "640",
-                  playerVars: {
-                    origin: "https://www.youtube.com"
-                  }
-                }}
-              />
-              <Link to={video.fields.slug}>READ MORE ...</Link>
-              <br />
-              {video.frontmatter.siteName && (
-                <Link to={video.frontmatter.siteURL}>
-                  {" "}
-                  <small> 📖 {video.frontmatter.siteName} </small>{" "}
-                </Link>
-              )}
-            </div>
-          ))}
+      <div className="video-index">
+        <ContentGrid 
+          components={this.getComponents()}
+          childClassName="video-container"
+            />
       </div>
     );
   }
 }
+
 
 VideoIndex.propTypes = {
   data: PropTypes.shape({

@@ -3,20 +3,25 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { Player } from "../utils";
+import { Row, Col } from 'react-simple-flex-grid';
+import "react-simple-flex-grid/lib/main.css";
 
 export const AudioListTemplate = ({ title, sounds }) => {
   return (
-    <div>
+    <Row gutter={40}>
       <h3>{title}</h3>
       <div>
         {sounds &&
           sounds.map(sound => (
-            <div className="player">
+            <Col xs={{ span: 6 }} sm={{ span: 6  }} md={{ span: 3 }}
+            lg={{ span: 2 }} xl={{ span: 2 }}
+            className="player-container"
+            >
               <Player soundcloudID={sound.soundcloudID} />
-            </div>
+            </Col>
           ))}
       </div>
-    </div>
+    </Row>
   );
 };
 

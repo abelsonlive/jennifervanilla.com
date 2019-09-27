@@ -27,6 +27,11 @@ const navLinks = [
     text: "Events"
   },
   {
+    path: "/t-shirts",
+    emoji: "👕",
+    text: "T-Shirts"
+  },
+  {
     path: "/sounds",
     emoji: "🔈",
     text: "Sounds"

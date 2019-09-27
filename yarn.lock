@@ -12191,6 +12191,14 @@ react-side-effect@^1.1.0:
   dependencies:
     shallowequal "^1.0.1"
 
+react-simple-flex-grid@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/react-simple-flex-grid/-/react-simple-flex-grid-1.2.3.tgz#97fe39af7382081e5bfff62194f5b108bbbaeda4"
+  integrity sha512-KwBUy2LBwGaJkzKsku8g+c5+gvNMnr62G/BzIYI8r/ZeYE9Q3MwFtzs2uDPpzzyHC3vGxVlnD9uLlLDlzXvlDg==
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.0"
+
 react-sortable-hoc@^1.0.0:
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/react-sortable-hoc/-/react-sortable-hoc-1.10.1.tgz#c352f26263acbcff9cf266bc755653a56c983a38"

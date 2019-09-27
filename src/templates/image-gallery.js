@@ -2,31 +2,39 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
+import { ContentGrid } from "../components/ContentGrid";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 export const ImageGalleryTemplate = ({ title, images }) => {
+  const components =
+    images &&
+    images.map(img => {
+      return (
+        <div>
+          <a href={img.link} target="_blank" rel="noopener noreferrer">
+            <PreviewCompatibleImage imageInfo={img} />
+          </a>
+          {img.caption && <small>{img.caption} </small>}
+          {img.creditName && (
+            <small>
+              <a href={img.creditURL} target="_blank" rel="noopener noreferrer">
+                {img.creditName}
+              </a>
+            </small>
+          )}
+          <br />
+        </div>
+      );
+    });
+
   return (
     <div>
-      <h3>{title}</h3>
-      <div>
-        {images &&
-          images.map(img => {
-            return (
-              <div>
-                {img.link ? (
-                  <a href={img.link} target="_blank" rel="noopener noreferrer">
-                    <PreviewCompatibleImage imageInfo={img} />
-                  </a>
-                ) : (
-                  <PreviewCompatibleImage imageInfo={img} />
-                )}
-                <br />
-                {img.alt && <small>{img.alt} </small>}
-                { img.creditName && <small><a href={img.creditURL}target="_blank" rel="noopener noreferrer" >{img.creditName}</a></small>}
-              </div>
-            );
-          })}
-      </div>
+      <ContentGrid
+        components={components}
+        xs={components.length + 2}
+        sm={5}
+        gutter={20}
+      />
     </div>
   );
 };
