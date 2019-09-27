@@ -44,6 +44,8 @@ class VideoIndex extends React.Component {
         <ContentGrid 
           components={this.getComponents()}
           childClassName="video-container"
+          lg={6}
+          gutter={20}
             />
       </div>
     );
